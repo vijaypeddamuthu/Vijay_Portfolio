@@ -194,6 +194,16 @@ doc
   .text('LinkedIn', {
     link: 'https://www.linkedin.com/in/vijaykumar-peddamuthu/',
     underline: true,
+    continued: true,
+    lineGap: 3,
+  })
+doc
+  .font(FONT.regular)
+  .fontSize(10)
+  .fillColor(COLOR.muted)
+  .text('  |  Portfolio', {
+    link: 'https://vijay-peddamuthu.vercel.app/',
+    underline: true,
     lineGap: 3,
   })
 doc.moveDown(SPACE.afterHeader)
