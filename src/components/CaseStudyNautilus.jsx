@@ -795,7 +795,7 @@ export function CaseStudyNautilus() {
               below are variations on this one flow.
             </p>
           </div>
-          <figure className="cs-diagram">
+          <figure className="cs-diagram cs-diagram--nda">
             <img
               src={taskflow}
               alt="End-to-end task flow across all four scenarios: log management and compliance, realtime correlation, UBA, and SOAR. It runs from login and role dashboards through case list and case details, playbook execution, case information, and event and entity details."

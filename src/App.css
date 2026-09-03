@@ -1691,6 +1691,13 @@ a.project__media:focus-visible {
   width: 100%;
 }
 
+.cs-diagram--nda img {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  transform: scale(1.03);
+  transform-origin: center;
+}
+
 .cs-diagram__blur {
   position: absolute;
   inset: 0;
@@ -2923,6 +2930,15 @@ a.project__media:focus-visible {
 .cs-frame__img {
   display: block;
   width: 100%;
+}
+
+/* NDA blur is applied to the image itself: backdrop-filter is dropped by some
+   browsers/GPU configurations, filter is not. */
+.cs-frame__img--nda {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  transform: scale(1.03);
+  transform-origin: center;
 }
 
 .cs-frame__cap {

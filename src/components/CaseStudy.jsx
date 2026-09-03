@@ -19,7 +19,11 @@ export function Frame({ src, caption, nda }) {
           <span />
           <span />
         </div>
-        <img className="cs-frame__img" src={src} alt={caption || ''} />
+        <img
+          className={nda ? 'cs-frame__img cs-frame__img--nda' : 'cs-frame__img'}
+          src={src}
+          alt={caption || ''}
+        />
         {nda ? <div className="cs-frame__nda" aria-hidden="true" /> : null}
       </div>
       {caption ? <figcaption className="cs-frame__cap">{caption}</figcaption> : null}
@@ -521,7 +525,7 @@ export function CaseStudy() {
               whether AI can auto-fix it or a developer needs to review.
             </p>
           </div>
-          <figure className="cs-diagram">
+          <figure className="cs-diagram cs-diagram--nda">
             <img
               src={taskflow}
               alt="End to end task flow: scan completion through AI analysis, business-impact and auto-fix decision branches, to the detailed issues view."
