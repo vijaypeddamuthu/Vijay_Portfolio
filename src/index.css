@@ -1,0 +1,171 @@
+/* ---------- Design tokens ---------- */
+/* Style guide adapted from designup.io: dark, cinematic, violet/magenta on
+   near-black with a cream serif display voice. Dark is the default look; a
+   cohesive cream/violet light variant applies at data-theme="light". */
+:root {
+  --bg: #08070d;
+  --bg-subtle: #0f0c18;
+  --surface: #141020;
+  --surface-2: #1a1428;
+  --text: #c6c2d6;
+  --text-strong: #f4f1e8;
+  --text-muted: #8b86a0;
+  --border: #241d34;
+  --border-strong: #362c4e;
+  --accent: #9d86ff;
+  --accent-strong: #b8a8ff;
+  --accent-contrast: #0a0812;
+  --accent-bg: rgba(124, 92, 255, 0.14);
+  --accent-border: rgba(124, 92, 255, 0.42);
+  --violet: #6a2be0;
+  --magenta: #e5399a;
+  --cream: #f2efe0;
+  --chip-bg: rgba(124, 92, 255, 0.12);
+  --chip-text: #d6ccff;
+  --focus: #9d86ff;
+  --glow: rgba(106, 43, 224, 0.3);
+  --glow-2: rgba(229, 57, 154, 0.14);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 18px 50px -24px rgba(106, 43, 224, 0.5);
+
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  --maxw: 80vw;
+  --gutter: clamp(20px, 5vw, 48px);
+
+  color-scheme: dark;
+  font: 400 18px/1.6 var(--sans);
+  letter-spacing: 0.1px;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f1e8;
+  --bg-subtle: #ece7db;
+  --surface: #fbf9f3;
+  --surface-2: #f0ebdf;
+  --text: #3a3444;
+  --text-strong: #15111f;
+  --text-muted: #6a6478;
+  --border: #ddd6c6;
+  --border-strong: #c9bfa9;
+  --accent: #5b2be0;
+  --accent-strong: #4a1fc0;
+  --accent-contrast: #ffffff;
+  --accent-bg: rgba(91, 43, 224, 0.08);
+  --accent-border: rgba(91, 43, 224, 0.32);
+  --violet: #5b2be0;
+  --magenta: #d61f83;
+  --cream: #2a2440;
+  --chip-bg: #eae2f7;
+  --chip-text: #4a2e8f;
+  --focus: #5b2be0;
+  --glow: rgba(91, 43, 224, 0.12);
+  --glow-2: rgba(214, 31, 131, 0.06);
+  --shadow-sm: 0 1px 2px rgba(20, 18, 30, 0.06);
+  --shadow-md: 0 18px 44px -24px rgba(91, 43, 224, 0.28);
+
+  color-scheme: light;
+}
+
+@media (max-width: 720px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(70% 55% at 50% -8%, var(--glow), transparent 70%),
+    radial-gradient(50% 40% at 85% 10%, var(--glow-2), transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-strong);
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+/* Visible focus for every interactive element (WCAG 2.4.7). */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
