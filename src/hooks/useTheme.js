@@ -2,12 +2,9 @@ import { useEffect, useState } from 'react'
 
 const STORAGE_KEY = 'theme'
 
-// Dark is the default look (per the designup.io style guide); a light variant
-// applies only after the user toggles it (persisted to localStorage).
+// Theme toggle UI is hidden for now; dark is forced regardless of any stored preference.
 function getInitialTheme() {
-  if (typeof window === 'undefined') return 'dark'
-  const stored = window.localStorage.getItem(STORAGE_KEY)
-  return stored === 'light' ? 'light' : 'dark'
+  return 'dark'
 }
 
 export function useTheme() {

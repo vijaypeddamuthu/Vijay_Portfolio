@@ -6,6 +6,7 @@ import { Work } from './components/Work'
 import { Timeline } from './components/Timeline'
 import { About } from './components/About'
 import { Footer } from './components/Footer'
+import { BackgroundFX } from './components/BackgroundFX'
 import { CaseStudy } from './components/CaseStudy'
 import { CaseStudyNautilus } from './components/CaseStudyNautilus'
 import { CaseStudyIGA } from './components/CaseStudyIGA'
@@ -53,22 +54,27 @@ function Landing() {
 function App() {
   const route = useSyncExternalStore(subscribe, getRoute)
 
+  let page
   if (route.startsWith('/case/sast')) {
-    return <CaseStudy />
+    page = <CaseStudy />
+  } else if (route.startsWith('/case/nautilus')) {
+    page = <CaseStudyNautilus />
+  } else if (route.startsWith('/case/iga')) {
+    page = <CaseStudyIGA />
+  } else if (route.startsWith('/case/fortify')) {
+    page = <CaseStudyFortify />
+  } else if (route.startsWith('/case/winwire')) {
+    page = <CaseStudyWinWire />
+  } else {
+    page = <Landing />
   }
-  if (route.startsWith('/case/nautilus')) {
-    return <CaseStudyNautilus />
-  }
-  if (route.startsWith('/case/iga')) {
-    return <CaseStudyIGA />
-  }
-  if (route.startsWith('/case/fortify')) {
-    return <CaseStudyFortify />
-  }
-  if (route.startsWith('/case/winwire')) {
-    return <CaseStudyWinWire />
-  }
-  return <Landing />
+
+  return (
+    <>
+      <BackgroundFX />
+      {page}
+    </>
+  )
 }
 
 export default App

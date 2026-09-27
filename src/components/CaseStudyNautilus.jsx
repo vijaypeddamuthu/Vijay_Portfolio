@@ -307,7 +307,7 @@ export function CaseStudyNautilus() {
       <main id="main" className="cs">
         {/* Hero */}
         <section className="cs-hero">
-          <p className="cs-kicker">Security Operations, ArcSight portfolio vision</p>
+          <p className="cs-kicker">Security operations, ArcSight portfolio vision</p>
           <h1 className="cs-title">Nautilus</h1>
           <p className="cs-lead">
             Setting a new UX vision for a cybersecurity portfolio stitched

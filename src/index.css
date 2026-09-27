@@ -1,7 +1,8 @@
 /* ---------- Design tokens ---------- */
 /* Style guide adapted from designup.io: dark, cinematic, violet/magenta on
-   near-black with a cream serif display voice. Dark is the default look; a
-   cohesive cream/violet light variant applies at data-theme="light". */
+   near-black. Dark is the default look; a cohesive cream/violet light variant
+   applies at data-theme="light". Two type families site-wide: Manrope for
+   headings, Inter for body copy. */
 :root {
   --bg: #08070d;
   --bg-subtle: #0f0c18;
@@ -29,7 +30,7 @@
   --shadow-md: 0 18px 50px -24px rgba(106, 43, 224, 0.5);
 
   --sans: 'Inter', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --serif: 'Manrope', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   --maxw: 80vw;
@@ -151,6 +152,95 @@ strong {
 .skip-link:focus {
   top: 12px;
   text-decoration: none;
+}
+
+/* ---------- Background FX ---------- */
+/* A drifting node graph (identity/SIEM correlation graph) plus a slow scan
+   sweep (nods to SAST/DAST scanning), fixed behind all routes. Kept very
+   faint and slow on purpose so it never competes with reading long-form
+   case-study text; neutralised entirely under prefers-reduced-motion below. */
+.bgfx {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bgfx__graph {
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+}
+
+:root[data-theme='light'] .bgfx__graph {
+  opacity: 0.32;
+}
+
+.bgfx__node {
+  fill: var(--accent);
+  opacity: 0.16;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bgfx-pulse 11s ease-in-out infinite;
+}
+
+.bgfx__edge {
+  stroke: var(--accent);
+  stroke-width: 1;
+  stroke-opacity: 0.12;
+  stroke-dasharray: 3 9;
+  animation: bgfx-flow 34s linear infinite;
+}
+
+.bgfx__scan {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  height: 26vh;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 7%, transparent),
+    transparent
+  );
+  animation: bgfx-scan 26s ease-in-out infinite;
+}
+
+@keyframes bgfx-pulse {
+  0%,
+  100% {
+    opacity: 0.14;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes bgfx-flow {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes bgfx-scan {
+  0%,
+  8% {
+    transform: translateY(-30vh);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  78%,
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

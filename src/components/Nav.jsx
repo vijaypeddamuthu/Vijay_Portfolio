@@ -1,17 +1,14 @@
 import { useEffect, useState } from 'react'
-import { ThemeToggle } from './ThemeToggle'
-import { useTheme } from '../hooks/useTheme'
 
 const NAV_LINKS = [
   { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
   { href: '#about', label: 'About' },
-  { href: '#contact', label: "Let's Talk" },
+  { href: '#contact', label: "Let's talk" },
 ]
 
 export function Nav() {
   const [open, setOpen] = useState(false)
-  const { theme, toggleTheme } = useTheme()
 
   // Close the mobile menu on Escape, and whenever the route changes underneath it.
   useEffect(() => {
@@ -100,7 +97,6 @@ export function Nav() {
             </svg>
             Resume
           </a>
-          <ThemeToggle theme={theme} onToggle={toggleTheme} />
         </nav>
       </div>
     </header>

@@ -7,7 +7,7 @@ import winwireThumb from '../assets/WW-Banner.webp'
 
 const PROJECTS = [
   {
-    kicker: 'Cloud Application Security',
+    kicker: 'Cloud application security',
     title: 'Fortify on Demand, reimagined',
     tags: ['SAST · DAST · MAST', 'Cloud SaaS', 'Enterprise B2B'],
     description:
@@ -18,7 +18,7 @@ const PROJECTS = [
     nda: true,
   },
   {
-    kicker: 'Identity Governance',
+    kicker: 'Identity governance',
     title: 'IGA — audit-ready access',
     tags: ['IGA', 'Compliance reporting', 'Enterprise SaaS'],
     description:
@@ -29,7 +29,7 @@ const PROJECTS = [
     nda: true,
   },
   {
-    kicker: 'Application Security',
+    kicker: 'Application security',
     title: 'SAST — AI-assisted remediation',
     tags: ['AppSec', 'SAST/DAST/SCA/MAST', 'Enterprise SaaS'],
     description:

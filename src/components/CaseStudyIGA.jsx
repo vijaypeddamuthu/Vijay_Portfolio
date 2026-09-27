@@ -257,7 +257,7 @@ export function CaseStudyIGA() {
       <main id="main" className="cs">
         {/* Hero */}
         <section className="cs-hero">
-          <p className="cs-kicker">Identity Governance &amp; Administration</p>
+          <p className="cs-kicker">Identity governance &amp; administration</p>
           <h1 className="cs-title">Audit-ready access, on demand</h1>
           <p className="cs-lead">
             Turning raw access data into a trustworthy, audit-ready artefact
@@ -610,26 +610,33 @@ export function CaseStudyIGA() {
               </li>
             ))}
           </ul>
-          <h3 className="cs-persona__h">User</h3>
-          <ul className="cs-reflect">
-            {OUTCOMES_USER.map((w) => (
-              <li key={w}>{w}</li>
-            ))}
-          </ul>
-          <h3 className="cs-persona__h">Business</h3>
-          <ul className="cs-reflect">
-            {OUTCOMES_BUSINESS.map((w) => (
-              <li key={w}>{w}</li>
-            ))}
-          </ul>
-          <h3 className="cs-persona__h">Team &amp; process</h3>
-          <ul className="cs-reflect">
-            {OUTCOMES_TEAM.map((w) => (
-              <li key={w}>{w}</li>
-            ))}
-          </ul>
+          <div className="cs-outcome-groups">
+            <div className="cs-outcome-group">
+              <h3 className="cs-persona__h">User</h3>
+              <ul className="cs-reflect">
+                {OUTCOMES_USER.map((w) => (
+                  <li key={w}>{w}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="cs-outcome-group">
+              <h3 className="cs-persona__h">Business</h3>
+              <ul className="cs-reflect">
+                {OUTCOMES_BUSINESS.map((w) => (
+                  <li key={w}>{w}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="cs-outcome-group">
+              <h3 className="cs-persona__h">Team &amp; process</h3>
+              <ul className="cs-reflect">
+                {OUTCOMES_TEAM.map((w) => (
+                  <li key={w}>{w}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </section>
-
         {/* Reflection */}
         <section className="cs-section" id="ig-reflection">
           <span className="cs-eyebrow">Reflection</span>

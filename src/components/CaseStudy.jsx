@@ -33,7 +33,7 @@ export function Frame({ src, caption, nda }) {
 
 // Curated strongest-outcome-first order, matching the Work section on the landing page.
 const CASE_STUDIES = [
-  { key: 'fortify', href: '#/case/fortify', kicker: 'Cloud Application Security', title: 'Fortify on Demand, reimagined' },
+  { key: 'fortify', href: '#/case/fortify', kicker: 'Cloud application security', title: 'Fortify on Demand, reimagined' },
   { key: 'iga', href: '#/case/iga', kicker: 'Identity Governance', title: 'IGA \u2014 audit-ready access' },
   { key: 'sast', href: '#/case/sast', kicker: 'Application Security', title: 'SAST \u2014 AI-assisted remediation' },
   { key: 'nautilus', href: '#/case/nautilus', kicker: 'Security Operations', title: 'Nautilus' },
@@ -552,7 +552,7 @@ export function CaseStudy() {
         <section className="cs-section" id="sc-solution">
           <span className="cs-eyebrow">06</span>
           <h2 className="cs-h2">The solution: five core use cases</h2>
-          <ul className="cs-cases">
+          <ul className="cs-cases cs-cases--spanlast">
             {USE_CASES.map((uc, i) => (
               <li key={uc.title} className="cs-case">
                 <span className="cs-case__num">{String(i + 1).padStart(2, '0')}</span>

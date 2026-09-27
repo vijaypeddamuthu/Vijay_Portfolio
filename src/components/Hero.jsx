@@ -67,7 +67,7 @@ export function Hero() {
 
       <p className="hero__status">
         <span className="hero__status-dot" aria-hidden="true" />
-        Bangalore, India &middot; Open to remote roles
+        Bangalore, India &middot; Open to new opportunities
       </p>
 
       <div className="hero__intro">

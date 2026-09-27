@@ -63,19 +63,19 @@ const CONSTRAINTS = [
 ]
 
 const PAIN_POINTS = [
-  ['1', '16-Step Scan Submission', 'Critical', 'Average scan submission required 16 steps across 4 screens. 34% of users abandoned before completing configuration.'],
-  ['2', 'Modality Silos', 'Critical', 'SAST, DAST, and MAST operated as completely separate experiences. Unified risk scores and cross-modality remediation were impossible.'],
-  ['3', 'Results Inaccessibility', 'High', 'Developers spent an average of 11 min per finding just working out what it meant, before attempting any fix.'],
-  ['4', 'No Executive View', 'High', 'CISOs exported CSVs and built board presentations manually. Zero native risk dashboard with business context.'],
-  ['5', '4.2-Day Onboarding Cliff', 'Medium', 'First-time users took an average of 4.2 days to submit their first scan. The setup guide was a 47-page PDF.'],
-  ['6', 'CI/CD Blind Spot', 'Medium', 'No native pipeline integration UI. Dev teams configured webhooks manually via undocumented API calls.'],
+  ['1', '16-step scan submission', 'Critical', 'Average scan submission required 16 steps across 4 screens. 34% of users abandoned before completing configuration.'],
+  ['2', 'Modality silos', 'Critical', 'SAST, DAST, and MAST operated as completely separate experiences. Unified risk scores and cross-modality remediation were impossible.'],
+  ['3', 'Results inaccessibility', 'High', 'Developers spent an average of 11 min per finding just working out what it meant, before attempting any fix.'],
+  ['4', 'No executive view', 'High', 'CISOs exported CSVs and built board presentations manually. Zero native risk dashboard with business context.'],
+  ['5', '4.2-day onboarding cliff', 'Medium', 'First-time users took an average of 4.2 days to submit their first scan. The setup guide was a 47-page PDF.'],
+  ['6', 'CI/CD blind spot', 'Medium', 'No native pipeline integration UI. Dev teams configured webhooks manually via undocumented API calls.'],
 ]
 
 const RESEARCH_METHODS = [
-  ['User Interviews', 'AppSec PMs, developers, CISOs. Semi-structured, 60-minute sessions.'],
-  ['Quantitative Survey', 'Current customers across SMB, mid-market, and enterprise segments.'],
-  ['Session Replay Audit', 'FullStory analysis: rage clicks, abandonment, and confusion patterns mapped.'],
-  ['Competitive Teardown', 'Veracode, Checkmarx, Snyk across 24 UX criteria and 3 task scenarios.'],
+  ['User interviews', 'AppSec PMs, developers, CISOs. Semi-structured, 60-minute sessions.'],
+  ['Quantitative survey', 'Current customers across SMB, mid-market, and enterprise segments.'],
+  ['Session replay audit', 'FullStory analysis: rage clicks, abandonment, and confusion patterns mapped.'],
+  ['Competitive teardown', 'Veracode, Checkmarx, Snyk across 24 UX criteria and 3 task scenarios.'],
 ]
 
 const PERSONAS = [
@@ -109,11 +109,11 @@ const PERSONAS = [
 ]
 
 const PRINCIPLES = [
-  ['Unified, Not Merged', 'SAST, DAST, and MAST are complementary lenses on the same application risk, not three separate tools with shared billing.'],
-  ['Role-Aware Context', 'The same finding means different things to a developer vs. a CISO. Role-aware views present the same data with the right emphasis.'],
-  ['Progressive Disclosure', 'Surface the 20% of information users need 80% of the time. Complexity is available on demand and never in the way.'],
-  ['Pipeline-Native First', 'Security is most effective when invisible in the developer workflow. CI/CD integration is a first-class experience, not a footnote.'],
-  ['Trend Over Snapshot', 'Security posture is only meaningful over time. Every metric defaults to trend view, not point-in-time status.'],
+  ['Unified, not merged', 'SAST, DAST, and MAST are complementary lenses on the same application risk, not three separate tools with shared billing.'],
+  ['Role-aware context', 'The same finding means different things to a developer vs. a CISO. Role-aware views present the same data with the right emphasis.'],
+  ['Progressive disclosure', 'Surface the 20% of information users need 80% of the time. Complexity is available on demand and never in the way.'],
+  ['Pipeline-native first', 'Security is most effective when invisible in the developer workflow. CI/CD integration is a first-class experience, not a footnote.'],
+  ['Trend over snapshot', 'Security posture is only meaningful over time. Every metric defaults to trend view, not point-in-time status.'],
   ['Show the reasoning first', 'If a verdict is going to help, people need to see how it was reached. Quiet automation alone was not enough.'],
 ]
 
@@ -155,15 +155,17 @@ const CORE_FLOWS = [
 const FLOW_DECISIONS = ['Progressive disclosure: minimal fields until needed', 'Smart defaults: last-used app pre-selected', 'Inline validation prevents empty submissions', 'Keyboard-navigable for power users']
 
 const MOVES = [
-  ['Restructuring the IA around the Application, not the Modality', 'The most contested decision of the project. Product insisted on modality tabs. Research was unambiguous: 8 of 8 participants found applications faster in the new model. Winning this argument was the single highest-leverage design decision of the project.'],
+  ['Restructuring the IA around the application, not the modality', 'The most contested decision of the project. Product insisted on modality tabs. Research was unambiguous: 8 of 8 participants found applications faster in the new model. Winning this argument was the single highest-leverage design decision of the project.'],
   ['Making the verdict understandable', 'I pushed back on shipping the automated risk model without showing its reasoning. Once reasoning was surfaced alongside the verdict, acceptance jumped from 54% to 91%.'],
   ['Making CI/CD integration a 3-click flow', 'Previously required 23 pages of API documentation. Redesigned as a guided setup flow. Pipeline adoption went from 4% to 68% of onboarded teams within 3 months of GA.'],
   ['Advocating for mobile responsiveness against engineering reluctance', 'Engineering estimated 6 weeks. I negotiated a 3-week MVP covering only the on-call triage use case. Mobile now accounts for 18% of all sessions, and on-call response time dropped 52%.'],
 ]
 
-const OUTCOME_APPSEC = ['DAST config: 47 min → 8 min', 'Unified findings eliminated the 3-tab workflow', 'Automated compliance: 8 hrs/week saved', 'Team NPS: +44 points']
-const OUTCOME_DEV = ['PR finding engagement: 11% → 74%', 'Fix rate within same sprint: 18% → 61%', 'Security gate adoption: 4% → 68%', 'Zero context-switching from IDE to portal']
-const OUTCOME_CISO = ['Board PDF: 3 days → 1 click', 'Risk trend across all 47 apps, live', 'Compliance badge coverage: fully automated', 'Renewal conversation shifted from cost to ROI']
+const OUTCOME_ROLES = [
+  ['AppSec PMs', ['DAST config: 47 min → 8 min', 'Unified findings eliminated the 3-tab workflow', 'Automated compliance: 8 hrs/week saved', 'Team NPS: +44 points']],
+  ['Developers', ['PR finding engagement: 11% → 74%', 'Fix rate within same sprint: 18% → 61%', 'Security gate adoption: 4% → 68%', 'Zero context-switching from IDE to portal']],
+  ['CISOs', ['Board PDF: 3 days → 1 click', 'Risk trend across all 47 apps, live', 'Compliance badge coverage: fully automated', 'Renewal conversation shifted from cost to ROI']],
+]
 
 const VALIDATION_METRICS = [
   ['Task success rate', 'Could a user go from My Applications to a submitted scan, and separately to an assigned finding, unaided.', "Why: if the core jobs need hand-holding, the IA restructure has failed regardless of what the research data said."],
@@ -281,7 +283,7 @@ export function CaseStudyFortify() {
       <main id="main" className="cs">
         {/* Hero */}
         <section className="cs-hero">
-          <p className="cs-kicker">Cloud Application Security</p>
+          <p className="cs-kicker">Cloud application security</p>
           <h1 className="cs-title">Fortify on Demand. Reimagined.</h1>
           <p className="cs-lead">
             How I redesigned a cloud-native application security testing
@@ -637,24 +639,18 @@ export function CaseStudyFortify() {
               </li>
             ))}
           </ul>
-          <h3 className="cs-persona__h">AppSec PMs</h3>
-          <ul className="cs-reflect">
-            {OUTCOME_APPSEC.map((w) => (
-              <li key={w}>{w}</li>
+          <div className="cs-outcome-roles">
+            {OUTCOME_ROLES.map(([role, wins]) => (
+              <div className="cs-outcome-role" key={role}>
+                <h3 className="cs-outcome-role__h">{role}</h3>
+                <ul className="cs-outcome-role__list">
+                  {wins.map((w) => (
+                    <li key={w}>{w}</li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
-          <h3 className="cs-persona__h">Developers</h3>
-          <ul className="cs-reflect">
-            {OUTCOME_DEV.map((w) => (
-              <li key={w}>{w}</li>
-            ))}
-          </ul>
-          <h3 className="cs-persona__h">CISOs</h3>
-          <ul className="cs-reflect">
-            {OUTCOME_CISO.map((w) => (
-              <li key={w}>{w}</li>
-            ))}
-          </ul>
+          </div>
           <div className="cs-wires">
             <Frame
               src={fodProgramDashboard}

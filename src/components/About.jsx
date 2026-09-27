@@ -1,3 +1,5 @@
+import vijayPhoto from '../assets/Vijay-Photo.jpg'
+
 function AboutRow({ num, title, children }) {
   return (
     <li className="about-row">
@@ -24,8 +26,8 @@ export function About() {
 
       <div className="about__intro">
         <div className="about__identity">
-          <div className="about__photo" aria-hidden="true">
-            <span className="about__photo-mono">VP</span>
+          <div className="about__photo">
+            <img className="about__photo-img" src={vijayPhoto} alt="Vijaykumar Peddamuthu" />
           </div>
           <p className="about__photo-caption">Yep, that's me.</p>
         </div>
@@ -92,19 +94,19 @@ export function About() {
             <h3 className="about-row__title">Recognition</h3>
             <ul className="about-awards">
               <li>
-                <span className="award__name">Design Innovation Award</span>
+                <span className="award__name">Design innovation award</span>
                 <span className="award__note">
                   Design systems that scaled usability and consistency
                 </span>
               </li>
               <li>
-                <span className="award__name">Mentorship Recognition</span>
+                <span className="award__name">Mentorship recognition</span>
                 <span className="award__note">
                   For investing in junior designers' growth
                 </span>
               </li>
               <li>
-                <span className="award__name">Accessibility Advocate</span>
+                <span className="award__name">Accessibility advocate</span>
                 <span className="award__note">
                   Certified — WCAG 2.1 in daily practice
                 </span>
@@ -170,24 +172,24 @@ export function About() {
         <div className="about__block">
           <h3 className="about__block-title">Design &amp; strategy</h3>
           <ul className="chips chips--inline" aria-label="Design and strategy skills">
-            <li className="chip">UX Strategy</li>
-            <li className="chip">Interaction &amp; Visual Design</li>
-            <li className="chip">Design Systems</li>
-            <li className="chip">Information Architecture</li>
+            <li className="chip">UX strategy</li>
+            <li className="chip">Interaction &amp; visual design</li>
+            <li className="chip">Design systems</li>
+            <li className="chip">Information architecture</li>
             <li className="chip">Accessibility (WCAG 2.1)</li>
-            <li className="chip">Design Thinking</li>
-            <li className="chip">User Research</li>
+            <li className="chip">Design thinking</li>
+            <li className="chip">User research</li>
           </ul>
         </div>
         <div className="about__block">
           <h3 className="about__block-title">Leadership</h3>
           <ul className="chips chips--inline" aria-label="Leadership skills">
-            <li className="chip">Design Leadership</li>
+            <li className="chip">Design leadership</li>
             <li className="chip">Mentoring</li>
-            <li className="chip">Stakeholder Storytelling</li>
-            <li className="chip">Workshop Facilitation</li>
-            <li className="chip">Decision Making</li>
-            <li className="chip">End-to-End Ownership</li>
+            <li className="chip">Stakeholder storytelling</li>
+            <li className="chip">Workshop facilitation</li>
+            <li className="chip">Decision making</li>
+            <li className="chip">End-to-end ownership</li>
           </ul>
         </div>
         <div className="about__block">
@@ -196,11 +198,46 @@ export function About() {
             <li className="chip">AppSec</li>
             <li className="chip">SecOps</li>
             <li className="chip">IAM</li>
-            <li className="chip">Zero Trust</li>
+            <li className="chip">Zero trust</li>
             <li className="chip">SAST / DAST / SCA</li>
             <li className="chip">B2B &amp; B2C</li>
             <li className="chip">AI in UX</li>
           </ul>
+        </div>
+        <div className="about__block">
+          <h3 className="about__block-title">Tools</h3>
+          <ul className="chips chips--inline" aria-label="Design tools">
+            <li className="chip">Figma</li>
+            <li className="chip">FigJam</li>
+            <li className="chip">Adobe XD</li>
+            <li className="chip">Sketch</li>
+            <li className="chip">InVision</li>
+            <li className="chip">Axure RP</li>
+            <li className="chip">Miro</li>
+            <li className="chip">Photoshop</li>
+            <li className="chip">Illustrator</li>
+          </ul>
+        </div>
+        <div className="about__block">
+          <h3 className="about__block-title">Front-end &amp; AI workflow</h3>
+          <ul className="chips chips--inline" aria-label="Front-end and AI tools">
+            <li className="chip">HTML5</li>
+            <li className="chip">CSS3</li>
+            <li className="chip">JavaScript</li>
+            <li className="chip">Claude</li>
+            <li className="chip">ChatGPT</li>
+            <li className="chip">Figma Make</li>
+            <li className="chip">Magic Patterns</li>
+            <li className="chip">Perplexity</li>
+            <li className="chip">Midjourney</li>
+          </ul>
+        </div>
+        <div className="about__block">
+          <h3 className="about__block-title">Education</h3>
+          <p className="about__block-text">
+            Bachelor's degree. Continued learning through the Interaction
+            Design Foundation and the Nielsen Norman Group.
+          </p>
         </div>
       </div>
     </section>
